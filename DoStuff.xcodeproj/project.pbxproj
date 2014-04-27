@@ -22,6 +22,8 @@
 		413C3A42190DCC76005A9D51 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413C3A26190DCC76005A9D51 /* CoreData.framework */; };
 		413C3A4A190DCC76005A9D51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413C3A48190DCC76005A9D51 /* InfoPlist.strings */; };
 		413C3A4C190DCC76005A9D51 /* DoStuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413C3A4B190DCC76005A9D51 /* DoStuffTests.m */; };
+		413C3A59190DCCD7005A9D51 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413C3A57190DCCD7005A9D51 /* SetupViewController.m */; };
+		413C3A5A190DCCD7005A9D51 /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413C3A58190DCCD7005A9D51 /* SetupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		413C3A47190DCC76005A9D51 /* DoStuffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoStuffTests-Info.plist"; sourceTree = "<group>"; };
 		413C3A49190DCC76005A9D51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		413C3A4B190DCC76005A9D51 /* DoStuffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoStuffTests.m; sourceTree = "<group>"; };
+		413C3A56190DCCD7005A9D51 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		413C3A57190DCCD7005A9D51 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		413C3A58190DCCD7005A9D51 /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,7 @@
 		413C3A28190DCC76005A9D51 /* DoStuff */ = {
 			isa = PBXGroup;
 			children = (
+				413C3A55190DCCBB005A9D51 /* Setup */,
 				413C3A31190DCC76005A9D51 /* AppDelegate.h */,
 				413C3A32190DCC76005A9D51 /* AppDelegate.m */,
 				413C3A37190DCC76005A9D51 /* Images.xcassets */,
@@ -151,6 +157,16 @@
 				413C3A48190DCC76005A9D51 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		413C3A55190DCCBB005A9D51 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				413C3A56190DCCD7005A9D51 /* SetupViewController.h */,
+				413C3A57190DCCD7005A9D51 /* SetupViewController.m */,
+				413C3A58190DCCD7005A9D51 /* SetupViewController.xib */,
+			);
+			name = Setup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				413C3A2D190DCC76005A9D51 /* InfoPlist.strings in Resources */,
+				413C3A5A190DCCD7005A9D51 /* SetupViewController.xib in Resources */,
 				413C3A38190DCC76005A9D51 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413C3A59190DCCD7005A9D51 /* SetupViewController.m in Sources */,
 				413C3A33190DCC76005A9D51 /* AppDelegate.m in Sources */,
 				413C3A2F190DCC76005A9D51 /* main.m in Sources */,
 				413C3A36190DCC76005A9D51 /* DoStuff.xcdatamodeld in Sources */,
