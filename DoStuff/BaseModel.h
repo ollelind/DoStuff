@@ -1,13 +1,13 @@
 //
-//  DataManager.m
+//  BaseModel.h
 //  DoStuff
 //
 //  Created by Olle Lind on 02/05/14.
 //  Copyright (c) 2014 Olle Lind. All rights reserved.
 //
 
-#import "DataManager.h"
+#import <Foundation/Foundation.h>
 
-@implementation DataManager
+@interface BaseModel : NSManagedObject
 
 @end
