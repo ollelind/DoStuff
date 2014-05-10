@@ -10,4 +10,6 @@
 
 @interface CreateActivityViewController : UIViewController
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+
 @end
