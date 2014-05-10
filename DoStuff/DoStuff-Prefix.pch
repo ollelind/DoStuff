@@ -15,3 +15,9 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
+
+#import "DoStuffProperties.h"
+#import "UIView+Frame.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define screenSize [UIScreen mainScreen].bounds.size
