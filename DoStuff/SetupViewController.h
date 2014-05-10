@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GreetingsView.h"
+#import "ImportDataView.h"
+#import "SignUpInformationView.h"
 
-@interface SetupViewController : UIViewController
+@interface SetupViewController : UIViewController<GreetingsViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+// Views
+
 
 @end
