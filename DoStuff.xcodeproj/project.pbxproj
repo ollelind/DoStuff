@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4104465A191EE9AB00634088 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41044658191EE9AB00634088 /* DatePickerView.m */; };
+		4104465B191EE9AB00634088 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41044659191EE9AB00634088 /* DatePickerView.xib */; };
 		410FFF6D1919401C00BDCD5F /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410FFF6B1919401C00BDCD5F /* CustomTabBarController.m */; };
 		410FFF6E1919401C00BDCD5F /* CustomTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410FFF6C1919401C00BDCD5F /* CustomTabBarController.xib */; };
 		410FFF721919421500BDCD5F /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410FFF711919421500BDCD5F /* CustomNavigationController.m */; };
@@ -96,6 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41044657191EE9AB00634088 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
+		41044658191EE9AB00634088 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
+		41044659191EE9AB00634088 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		410FFF6A1919401C00BDCD5F /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		410FFF6B1919401C00BDCD5F /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		410FFF6C1919401C00BDCD5F /* CustomTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarController.xib; sourceTree = "<group>"; };
@@ -550,6 +555,9 @@
 		41C3CDE7191ED26C004FFED5 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				41044657191EE9AB00634088 /* DatePickerView.h */,
+				41044658191EE9AB00634088 /* DatePickerView.m */,
+				41044659191EE9AB00634088 /* DatePickerView.xib */,
 				41C3CDE8191ED2A2004FFED5 /* CreateActivityViewController.h */,
 				41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */,
 				41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */,
@@ -635,6 +643,7 @@
 				413C3A68190DCF1A005A9D51 /* ImportDataView.xib in Resources */,
 				413E041419138D6B0059CE09 /* FriendListCell.xib in Resources */,
 				41C3CDE3191E0836004FFED5 /* HeroHeaderView.xib in Resources */,
+				4104465B191EE9AB00634088 /* DatePickerView.xib in Resources */,
 				413C3A2D190DCC76005A9D51 /* InfoPlist.strings in Resources */,
 				410FFF9F191AB57B00BDCD5F /* HeroCell.xib in Resources */,
 				419ADD31191160E700CD1443 /* LoginViewController.xib in Resources */,
@@ -682,6 +691,7 @@
 				413E03C9191373D90059CE09 /* BaseDAO.m in Sources */,
 				413E03DB191382670059CE09 /* User.m in Sources */,
 				413E03CC1913741B0059CE09 /* UserDAO.m in Sources */,
+				4104465A191EE9AB00634088 /* DatePickerView.m in Sources */,
 				413E040B19138A840059CE09 /* UIImageView+WebCache.m in Sources */,
 				413E03FF19138A840059CE09 /* NSData+ImageContentType.m in Sources */,
 				413E040319138A840059CE09 /* SDWebImageDownloader.m in Sources */,
