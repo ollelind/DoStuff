@@ -10,6 +10,7 @@
 #import "CustomNavigationController.h"
 #import "HeroViewController.h"
 #import "FriendsListViewController.h"
+#import "CreateActivityViewController.h"
 
 @interface CustomTabBarController ()
 
@@ -21,39 +22,43 @@
     self = [super init];
     if(self){
         self.delegate = self;
-        self.view.backgroundColor = [UIColor blueColor];
         
         FriendsListViewController *friendsListViewController = [[FriendsListViewController alloc]init];
         HeroViewController *heroViewController = [[HeroViewController alloc]init];
+        CreateActivityViewController *activityViewController = [[CreateActivityViewController alloc]init];
         
         CustomNavigationController *heroNavCon = [[CustomNavigationController alloc]initWithRootViewController:heroViewController];
         CustomNavigationController *friendsNavCon = [[CustomNavigationController alloc]initWithRootViewController:friendsListViewController];
+        CustomNavigationController *activityNavCon = [[CustomNavigationController alloc]initWithRootViewController:activityViewController];
         
         UITabBarItem *heroBarItem = [[UITabBarItem alloc] init];
         UITabBarItem *friendsBarItem = [[UITabBarItem alloc] init];
+        UITabBarItem *activityBarItem = [[UITabBarItem alloc] init];
         
         [self customizeTabBarItem:heroBarItem];
         [self customizeTabBarItem:friendsBarItem];
+        [self customizeTabBarItem:activityBarItem];
         
         [heroViewController setTabBarItem:heroBarItem];
         [friendsListViewController setTabBarItem:friendsBarItem];
+        [activityViewController setTabBarItem:activityBarItem];
         
-        heroBarItem.title = @"Hero";
-        friendsBarItem.title = @"Friends";
+        heroViewController.title = @"Hero";
+        friendsListViewController.title = @"Friends";
+        activityViewController.title = @"Activity";
         
-        [[UITabBar appearance] setTintColor:[UIColor greenColor]];
-        
-        [self setViewControllers:@[heroNavCon, friendsNavCon] animated:animated];
+        [self setViewControllers:@[activityNavCon ,heroNavCon, friendsNavCon] animated:animated];
+        [self setSelectedIndex:1];
     }
     return self;
 }
 
 -(void)customizeTabBarItem:(UITabBarItem *)item{
     [item setTitleTextAttributes:@{
-                                   NSForegroundColorAttributeName : [UIColor blueColor]
+                                   NSForegroundColorAttributeName : COLOR_ORANGE
                                    } forState:UIControlStateSelected];
     [item setTitleTextAttributes:@{
-                                   NSForegroundColorAttributeName : [UIColor greenColor]
+                                   NSForegroundColorAttributeName : [UIColor blackColor]
                                    } forState:UIControlStateDisabled];
     [item setTitleTextAttributes:@{
                                    //UITextAttributeFont : [UIFont fontWithProximaNovaBold:LifesumFont12_Footnote],
