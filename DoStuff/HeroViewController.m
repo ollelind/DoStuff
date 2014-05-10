@@ -108,7 +108,6 @@
     HeroHeaderView *headerView = [temp objectAtIndex:0];
     NSString *dateString = [self.sectionIndexes objectAtIndex:section];
     [headerView.dateLabel setText:dateString];
-    //[headerView setDate:[NSDate date]];
     return headerView;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

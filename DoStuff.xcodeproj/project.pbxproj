@@ -81,6 +81,8 @@
 		41C3CDE1191E0815004FFED5 /* HeroHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C3CDE0191E0815004FFED5 /* HeroHeaderView.m */; };
 		41C3CDE3191E0836004FFED5 /* HeroHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C3CDE2191E0835004FFED5 /* HeroHeaderView.xib */; };
 		41C3CDE6191E0B3F004FFED5 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C3CDE5191E0B3F004FFED5 /* NSDate-Utilities.m */; };
+		41C3CDEB191ED2A2004FFED5 /* CreateActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */; };
+		41C3CDEC191ED2A2004FFED5 /* CreateActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +222,9 @@
 		41C3CDE2191E0835004FFED5 /* HeroHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroHeaderView.xib; sourceTree = "<group>"; };
 		41C3CDE4191E0B3F004FFED5 /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-Utilities.h"; path = "Vendor/NSDate-Utilities.h"; sourceTree = "<group>"; };
 		41C3CDE5191E0B3F004FFED5 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate-Utilities.m"; path = "Vendor/NSDate-Utilities.m"; sourceTree = "<group>"; };
+		41C3CDE8191ED2A2004FFED5 /* CreateActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateActivityViewController.h; sourceTree = "<group>"; };
+		41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateActivityViewController.m; sourceTree = "<group>"; };
+		41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateActivityViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +339,7 @@
 		413C3A28190DCC76005A9D51 /* DoStuff */ = {
 			isa = PBXGroup;
 			children = (
+				41C3CDE7191ED26C004FFED5 /* Activity */,
 				413E03DF19138A840059CE09 /* Vendor */,
 				413E03B419136F720059CE09 /* Hero view */,
 				413E040F19138D400059CE09 /* Friends List */,
@@ -541,6 +547,16 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		41C3CDE7191ED26C004FFED5 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				41C3CDE8191ED2A2004FFED5 /* CreateActivityViewController.h */,
+				41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */,
+				41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */,
+			);
+			name = Activity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -624,6 +640,7 @@
 				419ADD31191160E700CD1443 /* LoginViewController.xib in Resources */,
 				419ADD3C191289B800CD1443 /* SignUpInformationView.xib in Resources */,
 				410FFF6E1919401C00BDCD5F /* CustomTabBarController.xib in Resources */,
+				41C3CDEC191ED2A2004FFED5 /* CreateActivityViewController.xib in Resources */,
 				413E03B919136F930059CE09 /* HeroViewController.xib in Resources */,
 				413C3A5F190DCE65005A9D51 /* GreetingsView.xib in Resources */,
 				413C3A5A190DCCD7005A9D51 /* SetupViewController.xib in Resources */,
@@ -694,6 +711,7 @@
 				413E040519138A840059CE09 /* SDWebImageManager.m in Sources */,
 				413E040A19138A840059CE09 /* UIImage+WebP.m in Sources */,
 				41C3CDE1191E0815004FFED5 /* HeroHeaderView.m in Sources */,
+				41C3CDEB191ED2A2004FFED5 /* CreateActivityViewController.m in Sources */,
 				419ADD371912846100CD1443 /* ProfilePictureImageView.m in Sources */,
 				413E040019138A840059CE09 /* SDImageCache.m in Sources */,
 				413E041719138FD40059CE09 /* CustomTableViewCell.m in Sources */,
