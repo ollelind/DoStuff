@@ -4,3 +4,9 @@
 *.xcsettings
 
 *.xccheckout
+
+DoStuff.xcodeproj/project.xcworkspace/xcuserdata/sebastianbredberg.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcscheme
+
+DoStuff.xcodeproj/xcuserdata/sebastianbredberg.xcuserdatad/xcschemes/xcschememanagement.plist
