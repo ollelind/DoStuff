@@ -8,6 +8,7 @@
 
 #import "CreateActivityViewController.h"
 #import "DatePickerView.h"
+#import "ActivityCategoryPickerView.h"
 
 @interface CreateActivityViewController (){
     int level;
@@ -36,11 +37,15 @@
     [self.view addSubview:self.scrollView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showDatePickerView)];
-    [self.view addGestureRecognizer:tap];
+    //[self.view addGestureRecognizer:tap];
     level = 0;
+    
+    ActivityCategoryPickerView *pickerView = [[ActivityCategoryPickerView alloc] initWithFrame:CGRectMake(15, 100, screenSize.width-15*2, 150)];
+    [self.view addSubview:pickerView];
     
 }
 -(void)showDatePickerView{
+                           
     NSArray *temp = [[NSBundle mainBundle] loadNibNamed:@"DatePickerView" owner:self options:nil];
     DatePickerView *datePickerView = [temp objectAtIndex:0];
     [self presentStep:datePickerView animated:YES];

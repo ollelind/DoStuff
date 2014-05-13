@@ -26,9 +26,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
+    
+    [self showTabBar];
     
     [FBLoginView class];
 
