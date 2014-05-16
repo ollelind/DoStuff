@@ -9,6 +9,7 @@
 #import "CreateActivityViewController.h"
 #import "DatePickerView.h"
 #import "ActivityCategoryPickerView.h"
+#import "FriendsPicker.h"
 
 @interface CreateActivityViewController (){
     int level;
@@ -42,6 +43,8 @@
     
     ActivityCategoryPickerView *pickerView = [[ActivityCategoryPickerView alloc] initWithFrame:CGRectMake(15, 100, screenSize.width-15*2, 150)];
     [self.view addSubview:pickerView];
+    //FriendsPicker *friendsPicker = [[FriendsPicker alloc]initWithFrame:CGRectMake(0, 100, screenSize.width, 200)];
+    //[self.view addSubview:friendsPicker];
     
 }
 -(void)showDatePickerView{

@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "AFJSONRequestOperation.h"
-#import "NotificationCenter.h"
 
 static dispatch_queue_t json_request_operation_processing_queue() {
     static dispatch_queue_t af_json_request_operation_processing_queue;
@@ -137,7 +136,6 @@ static dispatch_queue_t json_request_operation_processing_queue() {
                     }
                 } else {
                     if (success) {
-                        [[NotificationCenter sharedClient] receivedNotificationCountHeader:self.response.allHeaderFields[@"unread_notifications"] highestId:self.response.allHeaderFields[@"latest_notification_id"]];
                         dispatch_async(self.successCallbackQueue ?: dispatch_get_main_queue(), ^{
                             success(self, JSON);
                         });

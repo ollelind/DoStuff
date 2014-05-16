@@ -84,6 +84,9 @@
 		41C3CDE6191E0B3F004FFED5 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C3CDE5191E0B3F004FFED5 /* NSDate-Utilities.m */; };
 		41C3CDEB191ED2A2004FFED5 /* CreateActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */; };
 		41C3CDEC191ED2A2004FFED5 /* CreateActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */; };
+		4554C6D91924E1BA00AE5712 /* FriendsPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4554C6D81924E1BA00AE5712 /* FriendsPicker.m */; };
+		4554C6DC1924E6C300AE5712 /* FriendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4554C6DB1924E6C300AE5712 /* FriendCollectionViewCell.m */; };
+		4554C6DE1924E6DB00AE5712 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4554C6DD1924E6DB00AE5712 /* FriendCollectionViewCell.xib */; };
 		45E1CF041921390D00F3FC56 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E1CF031921390D00F3FC56 /* FacebookSDK.framework */; };
 		45E1CF071921397D00F3FC56 /* ActivityCategoryPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E1CF061921397D00F3FC56 /* ActivityCategoryPickerView.m */; };
 		45E1CF0B19213BA800F3FC56 /* CategoryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E1CF0A19213BA800F3FC56 /* CategoryItemView.m */; };
@@ -241,6 +244,11 @@
 		41C3CDE8191ED2A2004FFED5 /* CreateActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateActivityViewController.h; sourceTree = "<group>"; };
 		41C3CDE9191ED2A2004FFED5 /* CreateActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateActivityViewController.m; sourceTree = "<group>"; };
 		41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateActivityViewController.xib; sourceTree = "<group>"; };
+		4554C6D71924E1BA00AE5712 /* FriendsPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsPicker.h; sourceTree = "<group>"; };
+		4554C6D81924E1BA00AE5712 /* FriendsPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsPicker.m; sourceTree = "<group>"; };
+		4554C6DA1924E6C300AE5712 /* FriendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCollectionViewCell.h; sourceTree = "<group>"; };
+		4554C6DB1924E6C300AE5712 /* FriendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCollectionViewCell.m; sourceTree = "<group>"; };
+		4554C6DD1924E6DB00AE5712 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		45E1CF031921390D00F3FC56 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		45E1CF051921397D00F3FC56 /* ActivityCategoryPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCategoryPickerView.h; sourceTree = "<group>"; };
 		45E1CF061921397D00F3FC56 /* ActivityCategoryPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCategoryPickerView.m; sourceTree = "<group>"; };
@@ -594,6 +602,7 @@
 		41C3CDE7191ED26C004FFED5 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				4554C6D61924E19B00AE5712 /* Friend Picker */,
 				45E1CF0819213B6C00F3FC56 /* Category Picker */,
 				41044657191EE9AB00634088 /* DatePickerView.h */,
 				41044658191EE9AB00634088 /* DatePickerView.m */,
@@ -603,6 +612,18 @@
 				41C3CDEA191ED2A2004FFED5 /* CreateActivityViewController.xib */,
 			);
 			name = Activity;
+			sourceTree = "<group>";
+		};
+		4554C6D61924E19B00AE5712 /* Friend Picker */ = {
+			isa = PBXGroup;
+			children = (
+				4554C6D71924E1BA00AE5712 /* FriendsPicker.h */,
+				4554C6D81924E1BA00AE5712 /* FriendsPicker.m */,
+				4554C6DA1924E6C300AE5712 /* FriendCollectionViewCell.h */,
+				4554C6DB1924E6C300AE5712 /* FriendCollectionViewCell.m */,
+				4554C6DD1924E6DB00AE5712 /* FriendCollectionViewCell.xib */,
+			);
+			name = "Friend Picker";
 			sourceTree = "<group>";
 		};
 		45E1CF0819213B6C00F3FC56 /* Category Picker */ = {
@@ -738,6 +759,7 @@
 				41C3CDEC191ED2A2004FFED5 /* CreateActivityViewController.xib in Resources */,
 				413E03B919136F930059CE09 /* HeroViewController.xib in Resources */,
 				413C3A5F190DCE65005A9D51 /* GreetingsView.xib in Resources */,
+				4554C6DE1924E6DB00AE5712 /* FriendCollectionViewCell.xib in Resources */,
 				413C3A5A190DCCD7005A9D51 /* SetupViewController.xib in Resources */,
 				413E03BE19136FA30059CE09 /* FriendsListViewController.xib in Resources */,
 				413C3A38190DCC76005A9D51 /* Images.xcassets in Resources */,
@@ -765,6 +787,7 @@
 				410FFF6D1919401C00BDCD5F /* CustomTabBarController.m in Sources */,
 				413E03CF1913787B0059CE09 /* DataManager.m in Sources */,
 				413C3A5D190DCE52005A9D51 /* GreetingsView.m in Sources */,
+				4554C6DC1924E6C300AE5712 /* FriendCollectionViewCell.m in Sources */,
 				419ADD2719115E0700CD1443 /* FacebookHandler.m in Sources */,
 				419ADD341912768900CD1443 /* CustomViewController.m in Sources */,
 				45F6302C1922C00400AFA5D0 /* AFURLConnectionOperation.m in Sources */,
@@ -808,6 +831,7 @@
 				45F6302A1922C00400AFA5D0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				413E040619138A840059CE09 /* SDWebImagePrefetcher.m in Sources */,
 				419ADD3A1912889300CD1443 /* SignUpInformationView.m in Sources */,
+				4554C6D91924E1BA00AE5712 /* FriendsPicker.m in Sources */,
 				413E040419138A840059CE09 /* SDWebImageDownloaderOperation.m in Sources */,
 				410FFFE6191BE5B500BDCD5F /* ActivityDAO.m in Sources */,
 				413E03B819136F930059CE09 /* HeroViewController.m in Sources */,

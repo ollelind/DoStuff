@@ -28,7 +28,10 @@
         self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
-        self.scrollView.backgroundColor = [UIColor whiteColor];;
+        self.scrollView.backgroundColor = [UIColor whiteColor];
+        self.scrollView.layer.borderColor = COLOR_LIGHT_GREY.CGColor;
+        self.scrollView.layer.borderWidth = 1.0;
+        self.scrollView.layer.cornerRadius = 5.0;
         [self addSubview:self.scrollView];
         
         [self reloadView];
@@ -41,15 +44,13 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, 0);
     
     double scrollViewHeight = 0;
-    for(int i=0; i<self.categories.count*5; i++){
-        
-        double x = PADDING + (i%(int)(self.scrollView.frame.size.width / CATEGORY_ITEM_SIZE.width)) * (CATEGORY_ITEM_SIZE.width + PADDING);
-        int size = self.scrollView.frame.size.width;
-        double divider =(i+1)*CATEGORY_ITEM_SIZE.width;
-        int y = PADDING + (int)divider/size * (CATEGORY_ITEM_SIZE.height + PADDING);
+    for(int i=0; i<15; i++){
+        double x = PADDING + (i%4)*(CATEGORY_ITEM_SIZE.width+PADDING);
+        int y = PADDING + (i/4) * (CATEGORY_ITEM_SIZE.height + PADDING);
         
         ActivityCategory *category = [self.categories objectAtIndex:0];
         CategoryItemView *itemView = [[CategoryItemView alloc]initWithCategory:category];
+        itemView.parentScrollView = self.scrollView;
         itemView.tag = i;
         [itemView addTarget:self action:@selector(itemPressed:) forControlEvents:UIControlEventTouchUpInside];
         [itemView setOriginX:x];
@@ -61,26 +62,24 @@
     
     self.blurView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
     self.blurView.backgroundColor = [UIColor blackColor];
-    self.blurView.layer.opacity = 0.7;
     self.blurView.userInteractionEnabled = NO;
     
 }
 
 -(void)itemPressed:(UIControl *)item{
     CategoryItemView *categoryItem = (CategoryItemView *)item;
-    if(categoryItem == self.selectedCategoryItem){
-        [categoryItem deselectItem];
+    if(self.selectedCategoryItem){
+        [self.selectedCategoryItem deselectItem];
         [self removeBlurView];
         self.selectedCategoryItem = nil;
+        self.selectedCategory = nil;
         return;
     }
     
-    if(self.selectedCategoryItem){
-        [self.selectedCategoryItem deselectItem];
-    }
     self.selectedCategoryItem = categoryItem;
+    //ActivityCategory *category = [self.categories objectAtIndex:item.tag];
+    //self.selectedCategory = category;
     [categoryItem selectItem];
-    categoryItem.layer.zPosition = 100;
     [self showBlurView];
 }
 
@@ -89,7 +88,7 @@
         [self.scrollView addSubview:self.blurView];
         self.blurView.layer.opacity = 0;
         [UIView animateWithDuration:0.2 animations:^{
-            self.blurView.layer.opacity = 0.6;
+            self.blurView.layer.opacity = 0.3;
         }];
         
     }

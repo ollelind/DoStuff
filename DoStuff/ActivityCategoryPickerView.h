@@ -15,6 +15,6 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) CategoryItemView *selectedCategoryItem;
 @property (nonatomic, strong) UIView *blurView;
-
+@property (nonatomic, strong) ActivityCategory *selectedCategory;
 
 @end

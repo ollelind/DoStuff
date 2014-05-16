@@ -23,7 +23,7 @@
     maskLayer.path = maskPath.CGPath;
     self.container.layer.mask = maskLayer;
     
-    self.container.layer.borderColor = [UIColor colorWithRed:230.0/255 green:230.0/255 blue:230.0/255 alpha:1.0].CGColor;
+    self.container.layer.borderColor = COLOR_LIGHT_GREY.CGColor;
     self.container.layer.borderWidth = 1.0;
 }
 
