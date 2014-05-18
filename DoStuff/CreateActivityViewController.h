@@ -11,5 +11,12 @@
 @interface CreateActivityViewController : UIViewController
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *nextView;
+- (IBAction)nextPressed:(id)sender;
+
+
+// Date picker
+@property (strong, nonatomic) IBOutlet UIView *datePickerView;
+@property (nonatomic, strong) IBOutlet UIDatePicker *datePicker;
 
 @end

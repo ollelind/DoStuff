@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DatePickerView : UIView
+@interface DatePickerView : UIView <UIScrollViewDelegate>
+
+// Interface
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+// Properties
+@property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, strong) NSMutableArray *datesArray;
+@property (nonatomic, assign) CGFloat leftMargin;
 
 @end

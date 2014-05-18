@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Helpers : NSObject
+@interface Helper : NSObject
 
++(Helper *)shared;
+
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+-(NSString *)getStringFromDate:(NSDate *)date;
 +(NSString *)stringFromValue:(id)value;
 
 @end

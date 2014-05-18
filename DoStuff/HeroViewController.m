@@ -13,9 +13,9 @@
 #import "Activity.h"
 #import "HeroHeaderView.h"
 #import "NSDate-Utilities.h"
+#import "Helper.h"
 
 @interface HeroViewController (){
-    NSDateFormatter *dateFormatter;
 }
 
 @end
@@ -37,8 +37,7 @@
     
     [self.navigationItem setTitle:@"Do Stuff?"];
     
-    dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"EEEE dd MMMM"];
+    
 
     // Do any additional setup after loading the view from its nib.
     self.table = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
@@ -69,7 +68,7 @@
     }
     for(Activity *activity in activities){
         NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:activity.date];
-        NSString *dateString = [self getStringFromDate:date];
+        NSString *dateString = [[Helper shared] getStringFromDate:date];
         
         if(![self.sections objectForKey:dateString]){
             // The date hasn't been added to the sections yet, add it
@@ -125,17 +124,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
--(NSString *)getStringFromDate:(NSDate *)date{
-    NSString *dateString = nil;
-    if([date isToday]){
-        dateString = @"Today!";
-    }else if([date isTomorrow]){
-        dateString = @"Tomorrow!";
-    }else{
-        dateString = [dateFormatter stringFromDate:date];
-    }
-    return dateString;
-}
+
 
 - (void)didReceiveMemoryWarning
 {

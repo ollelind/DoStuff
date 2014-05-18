@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4104465A191EE9AB00634088 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41044658191EE9AB00634088 /* DatePickerView.m */; };
 		4104465B191EE9AB00634088 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41044659191EE9AB00634088 /* DatePickerView.xib */; };
+		4104466019200B5500634088 /* CategoryPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104465F19200B5500634088 /* CategoryPickerView.m */; };
 		410FFF6D1919401C00BDCD5F /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410FFF6B1919401C00BDCD5F /* CustomTabBarController.m */; };
 		410FFF6E1919401C00BDCD5F /* CustomTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410FFF6C1919401C00BDCD5F /* CustomTabBarController.xib */; };
 		410FFF721919421500BDCD5F /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 410FFF711919421500BDCD5F /* CustomNavigationController.m */; };
@@ -71,7 +72,7 @@
 		413E041319138D6B0059CE09 /* FriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E041119138D6B0059CE09 /* FriendListCell.m */; };
 		413E041419138D6B0059CE09 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413E041219138D6B0059CE09 /* FriendListCell.xib */; };
 		413E041719138FD40059CE09 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E041619138FD40059CE09 /* CustomTableViewCell.m */; };
-		413E041A1913A1B30059CE09 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E04191913A1B30059CE09 /* Helpers.m */; };
+		413E041A1913A1B30059CE09 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E04191913A1B30059CE09 /* Helper.m */; };
 		419ADD2719115E0700CD1443 /* FacebookHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2619115E0700CD1443 /* FacebookHandler.m */; };
 		419ADD2B19115EE400CD1443 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419ADD2A19115EE400CD1443 /* FacebookSDK.framework */; };
 		419ADD30191160E700CD1443 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2E191160E700CD1443 /* LoginViewController.m */; };
@@ -101,6 +102,8 @@
 		41044657191EE9AB00634088 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		41044658191EE9AB00634088 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		41044659191EE9AB00634088 /* DatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		4104465E19200B5500634088 /* CategoryPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerView.h; sourceTree = "<group>"; };
+		4104465F19200B5500634088 /* CategoryPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerView.m; sourceTree = "<group>"; };
 		410FFF6A1919401C00BDCD5F /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		410FFF6B1919401C00BDCD5F /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		410FFF6C1919401C00BDCD5F /* CustomTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTabBarController.xib; sourceTree = "<group>"; };
@@ -207,8 +210,8 @@
 		413E041219138D6B0059CE09 /* FriendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendListCell.xib; sourceTree = "<group>"; };
 		413E041519138FD40059CE09 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		413E041619138FD40059CE09 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		413E04181913A1B30059CE09 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
-		413E04191913A1B30059CE09 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		413E04181913A1B30059CE09 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		413E04191913A1B30059CE09 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		419ADD2519115E0700CD1443 /* FacebookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHandler.h; sourceTree = "<group>"; };
 		419ADD2619115E0700CD1443 /* FacebookHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHandler.m; sourceTree = "<group>"; };
 		419ADD2A19115EE400CD1443 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -259,13 +262,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4104466119200B9900634088 /* CategoryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4104465E19200B5500634088 /* CategoryPickerView.h */,
+				4104465F19200B5500634088 /* CategoryPickerView.m */,
+			);
+			name = CategoryPicker;
+			sourceTree = "<group>";
+		};
 		410FFF73191944BA00BDCD5F /* Categories and helpers */ = {
 			isa = PBXGroup;
 			children = (
 				41C3CDE4191E0B3F004FFED5 /* NSDate-Utilities.h */,
 				41C3CDE5191E0B3F004FFED5 /* NSDate-Utilities.m */,
-				413E04181913A1B30059CE09 /* Helpers.h */,
-				413E04191913A1B30059CE09 /* Helpers.m */,
+				413E04181913A1B30059CE09 /* Helper.h */,
+				413E04191913A1B30059CE09 /* Helper.m */,
 				413C3A6B190DD15E005A9D51 /* UIView+Frame.h */,
 				413C3A6C190DD15E005A9D51 /* UIView+Frame.m */,
 				410FFFA0191AB94900BDCD5F /* DataFactory.h */,
@@ -555,6 +567,7 @@
 		41C3CDE7191ED26C004FFED5 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				4104466119200B9900634088 /* CategoryPicker */,
 				41044657191EE9AB00634088 /* DatePickerView.h */,
 				41044658191EE9AB00634088 /* DatePickerView.m */,
 				41044659191EE9AB00634088 /* DatePickerView.xib */,
@@ -682,13 +695,14 @@
 				419ADD2719115E0700CD1443 /* FacebookHandler.m in Sources */,
 				419ADD341912768900CD1443 /* CustomViewController.m in Sources */,
 				413E040719138A840059CE09 /* UIButton+WebCache.m in Sources */,
-				413E041A1913A1B30059CE09 /* Helpers.m in Sources */,
+				413E041A1913A1B30059CE09 /* Helper.m in Sources */,
 				413C3A59190DCCD7005A9D51 /* SetupViewController.m in Sources */,
 				413E040919138A840059CE09 /* UIImage+MultiFormat.m in Sources */,
 				410FFF721919421500BDCD5F /* CustomNavigationController.m in Sources */,
 				419ADD30191160E700CD1443 /* LoginViewController.m in Sources */,
 				413E040219138A840059CE09 /* SDWebImageDecoder.m in Sources */,
 				413E03C9191373D90059CE09 /* BaseDAO.m in Sources */,
+				4104466019200B5500634088 /* CategoryPickerView.m in Sources */,
 				413E03DB191382670059CE09 /* User.m in Sources */,
 				413E03CC1913741B0059CE09 /* UserDAO.m in Sources */,
 				4104465A191EE9AB00634088 /* DatePickerView.m in Sources */,
