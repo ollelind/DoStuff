@@ -96,7 +96,8 @@
     UIView *coloredView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenSize.width, 25)];
     coloredView.backgroundColor = COLOR_ORANGE;
     [container addSubview:coloredView];
-    CustomLabel *label = [[CustomLabel alloc]initWithFrame:CGRectMake(15, 5, 50, 15)];
+    CustomLabel *label = [CustomLabel customMediumWithSize:FontSizeText_16];
+    label.frame = CGRectMake(15, 5, 50, 15);
     label.text = [sectionIndexes objectAtIndex:section];
     label.textColor = [UIColor whiteColor];
     [container addSubview:label];

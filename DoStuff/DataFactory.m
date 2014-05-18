@@ -17,9 +17,9 @@
 
 -(void)populateCategories{
     ActivityCategoryDAO *dao = [ActivityCategoryDAO buildDAO];
-    [dao newItemWithName:@"Drinking" imageURL:@"olle_profile"];
-    [dao newItemWithName:@"Sporting" imageURL:@"olle_profile"];
-    [dao newItemWithName:@"Gaming" imageURL:@"olle_profile"];
+    [dao newItemWithName:@"Drinking" imageURL:@"category_training"];
+    [dao newItemWithName:@"Sporting" imageURL:@"category_training"];
+    [dao newItemWithName:@"Gaming" imageURL:@"category_training"];
 }
 
 -(void)populateActivities{

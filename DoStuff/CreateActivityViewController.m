@@ -8,6 +8,8 @@
 
 #import "CreateActivityViewController.h"
 #import "DatePickerView.h"
+#import "ActivityCategoryPickerView.h"
+#import "FriendsPicker.h"
 
 @interface CreateActivityViewController (){
     int level;
@@ -49,14 +51,12 @@
             break;
         default:
             break;
-    }
-}
+    }}
 
--(void)showDatePickerView{
-    [self presentStep:self.datePickerView animated:YES];
-}
--(void)showNameView{
-
+-(void)showDatePickerView{                           
+    NSArray *temp = [[NSBundle mainBundle] loadNibNamed:@"DatePickerView" owner:self options:nil];
+    DatePickerView *datePickerView = [temp objectAtIndex:0];
+    [self presentStep:datePickerView animated:YES];
 }
 
 
