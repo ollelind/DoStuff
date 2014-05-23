@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ProfilePictureImageView.h"
 #import "CustomLabel.h"
+#import "User.h"
 
 @interface FriendCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet ProfilePictureImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet CustomLabel *nameLabel;
+
+-(void)setUser:(User *)user;
 
 @end

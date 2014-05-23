@@ -8,9 +8,10 @@
 
 #import "FriendsPicker.h"
 #import "FriendCollectionViewCell.h"
+#import "User.h"
+#import "UserDAO.h"
 
 @implementation FriendsPicker{
-    NSMutableArray *friends;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,7 +19,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        friends = [NSMutableArray arrayWithObjects:@"Olle",@"Sebastian",@"Christoffer",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle",@"Olle", nil];
+        UserDAO *dao = [UserDAO buildDAO];
+        self.friends = [NSMutableArray arrayWithArray:[dao listEntities]];
+        
         
         UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
         [aFlowLayout setItemSize:CGSizeMake(80,80)];
@@ -41,7 +44,7 @@
 #pragma mark - UICollectionView Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return friends.count;
+    return self.friends.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -49,10 +52,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *name = friends[indexPath.row];
+    User *friend = self.friends[indexPath.row];
     FriendCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([FriendCollectionViewCell class]) forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.nameLabel.text = name;
+    [cell setUser:friend];
     return cell;
 }
 
@@ -73,7 +75,7 @@
 {
     // TODO: Select Item
     [self selectedAniamtionForCell:(FriendCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath]];
-    [friends removeObjectAtIndex:indexPath.row];
+    [self.friends removeObjectAtIndex:indexPath.row];
     [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

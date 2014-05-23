@@ -11,5 +11,6 @@
 @interface FriendsPicker : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *friends;
 
 @end

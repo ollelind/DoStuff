@@ -7,6 +7,7 @@
 //
 
 #import "FriendCollectionViewCell.h"
+#import "User.h"
 
 @implementation FriendCollectionViewCell
 
@@ -20,7 +21,12 @@
 }
 
 -(void)awakeFromNib{
+    self.nameLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+}
 
+-(void)setUser:(User *)user{
+    self.nameLabel.text = user.name;
+    [self.profileImageView setImageURL:user.imageURL];
 }
 
 /*
