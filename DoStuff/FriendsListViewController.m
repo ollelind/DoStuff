@@ -40,8 +40,8 @@
     UINavigationBar *navBar = self.navigationController.navigationBar;
     UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, screenSize.width, navBar.frame.size.height)];
     searchBar.delegate = self;
-    searchBar.tintColor = COLOR_ORANGE;
-    searchBar.backgroundColor = COLOR_BACKGROUND_GREY;
+    searchBar.tintColor = [UIColor whiteColor];
+    searchBar.backgroundColor = [UIColor clearColor];
     [navBar addSubview:searchBar];
     
     _table = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
@@ -94,7 +94,7 @@
     UIView *container = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenSize.width, 30)];
     container.backgroundColor = [UIColor clearColor];
     UIView *coloredView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenSize.width, 25)];
-    coloredView.backgroundColor = COLOR_ORANGE;
+    coloredView.backgroundColor = COLOR_MAIN;
     [container addSubview:coloredView];
     CustomLabel *label = [CustomLabel customMediumWithSize:FontSizeText_16];
     label.frame = CGRectMake(15, 5, 50, 15);

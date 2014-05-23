@@ -27,10 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.barTintColor = [UIColor whiteColor];
-    self.navigationBar.translucent = YES;
-    self.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationBar.backgroundColor = [UIColor clearColor];
+    self.navigationBar.barTintColor = COLOR_MAIN;
+    self.navigationBar.translucent = NO;
     //custom ios 7 swipe to push back
     self.interactivePopGestureRecognizer.enabled = YES;
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;

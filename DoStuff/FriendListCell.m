@@ -26,7 +26,7 @@
     UIView *selectedContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenSize.width, [FriendListCell defaultCellHeight])];
     selectedContainer.backgroundColor = [UIColor clearColor];
     UIView *selectedBackground = [[UIView alloc]initWithFrame:CGRectMake(28, 0, 292, 60)];
-    selectedBackground.backgroundColor = COLOR_ORANGE;
+    selectedBackground.backgroundColor = COLOR_MAIN;
     [selectedContainer addSubview:selectedBackground];
     [self setSelectedBackgroundView:selectedContainer];
 }

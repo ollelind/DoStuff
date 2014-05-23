@@ -71,7 +71,7 @@
         UIView *view = [self.datesArray objectAtIndex:i];
         CustomLabel *label = (CustomLabel *)[view viewWithTag:2];
         if(i == index){
-            label.textColor = COLOR_ORANGE;
+            label.textColor = COLOR_MAIN;
         }else{
             label.textColor = [UIColor blackColor];
         }

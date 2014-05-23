@@ -55,7 +55,7 @@
 
 -(void)customizeTabBarItem:(UITabBarItem *)item{
     [item setTitleTextAttributes:@{
-                                   NSForegroundColorAttributeName : COLOR_ORANGE
+                                   NSForegroundColorAttributeName : COLOR_MAIN
                                    } forState:UIControlStateSelected];
     [item setTitleTextAttributes:@{
                                    NSForegroundColorAttributeName : [UIColor blackColor]

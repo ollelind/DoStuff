@@ -52,8 +52,8 @@
 -(void)startLoader{
     activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     activityIndicator.frame = CGRectMake(self.frame.size.width/2 - activityIndicator.frame.size.width/2, self.frame.size.height/2 - activityIndicator.frame.size.height/2, activityIndicator.frame.size.height, activityIndicator.frame.size.height);
-    activityIndicator.tintColor = COLOR_ORANGE;
-    activityIndicator.color = COLOR_ORANGE;
+    activityIndicator.tintColor = COLOR_MAIN;
+    activityIndicator.color = COLOR_MAIN;
     [activityIndicator startAnimating];
     [self addSubview:activityIndicator];
 }
