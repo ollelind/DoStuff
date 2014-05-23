@@ -13,11 +13,8 @@
 #import "Activity.h"
 #import "HeroHeaderView.h"
 #import "NSDate-Utilities.h"
-<<<<<<< HEAD
 #import "Helper.h"
-=======
 #import "ActivityCategoryDAO.h"
->>>>>>> FETCH_HEAD
 
 @interface HeroViewController (){
 }
