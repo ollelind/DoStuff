@@ -38,7 +38,7 @@
     [self.scrollView addSubview:self.nextView];
     [self.view addSubview:self.scrollView];
     level = 0;
-    [self showDatePickerView];
+    [self showNextView];
 }
 
 -(void)showNextView{
@@ -47,18 +47,37 @@
             [self showDatePickerView];
             break;
         case 1:
-            
+            [self showFriendPickerView];
             break;
         default:
             break;
-    }}
-
--(void)showDatePickerView{                           
-    NSArray *temp = [[NSBundle mainBundle] loadNibNamed:@"DatePickerView" owner:self options:nil];
-    DatePickerView *datePickerView = [temp objectAtIndex:0];
-    [self presentStep:datePickerView animated:YES];
+    }
 }
 
+-(void)showDatePickerView{
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.datePickerUpperBackground.bounds byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight) cornerRadii:CGSizeMake(5.0, 5.0)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.datePickerUpperBackground.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.datePickerUpperBackground.layer.mask = maskLayer;
+    self.datePickerUpperBackground.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+    
+    UIBezierPath *maskPathLower = [UIBezierPath bezierPathWithRoundedRect:self.datePickerLowerBackground.bounds byRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerBottomRight) cornerRadii:CGSizeMake(5.0, 5.0)];
+    CAShapeLayer *maskLayerLower = [[CAShapeLayer alloc] init];
+    maskLayerLower.frame = self.datePickerLowerBackground.bounds;
+    maskLayerLower.path = maskPathLower.CGPath;
+    self.datePickerLowerBackground.layer.mask = maskLayerLower;
+    self.datePickerLowerBackground.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.3];
+
+    
+    
+    [self presentStep:self.datePickerView animated:YES];
+}
+
+-(void)showFriendPickerView{
+    FriendsPicker *picker = [[FriendsPicker alloc]initWithFrame:CGRectMake(15, 0, 290, 200)];
+    [self presentStep:picker animated:YES];
+}
 
 -(void)viewDidAppear:(BOOL)animated{
 
@@ -83,6 +102,7 @@
         [view setOriginY:self.scrollView.contentSize.height];
     }
     self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.contentSize.height + view.frame.size.height);
+    [self.scrollView scrollRectToVisible:CGRectMake(0, view.frame.origin.y, 320, 200) animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,6 +112,6 @@
 }
 
 - (IBAction)nextPressed:(id)sender {
-    [self showDatePickerView];
+    [self showNextView];
 }
 @end

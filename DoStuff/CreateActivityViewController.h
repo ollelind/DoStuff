@@ -18,5 +18,7 @@
 // Date picker
 @property (strong, nonatomic) IBOutlet UIView *datePickerView;
 @property (nonatomic, strong) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIView *datePickerLowerBackground;
+@property (weak, nonatomic) IBOutlet UIView *datePickerUpperBackground;
 
 @end
