@@ -10,8 +10,6 @@
 
 @implementation CustomLabel
 
-static NSString *fontName = @"Helvetica";
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -22,7 +20,21 @@ static NSString *fontName = @"Helvetica";
 }
 
 -(void)awakeFromNib{
-
+    NSString *textWight;
+    NSLog(@"%@", self.font.fontName);
+    if([self.font.fontName rangeOfString:@"Regular"].location != NSNotFound){
+        textWight = @"Light";
+    }
+    else if([self.font.fontName rangeOfString:@"Medium"].location != NSNotFound){
+        textWight = @"Medium";
+    }
+    else if([self.font.fontName rangeOfString:@"Bold"].location != NSNotFound){
+        textWight = @"Bold";
+    }
+    else{
+        textWight = @"Light";
+    }
+    self.font = [UIFont fontWithName:[NSString stringWithFormat:@"%@-%@", fontName, textWight] size:self.font.pointSize];
 }
 
 +(CustomLabel *)customRegularWithSize:(FontSize)size{

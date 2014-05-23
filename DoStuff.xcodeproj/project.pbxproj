@@ -73,6 +73,9 @@
 		413E041419138D6B0059CE09 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413E041219138D6B0059CE09 /* FriendListCell.xib */; };
 		413E041719138FD40059CE09 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E041619138FD40059CE09 /* CustomTableViewCell.m */; };
 		413E041A1913A1B30059CE09 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 413E04191913A1B30059CE09 /* Helper.m */; };
+		418BBC70192FF8C70033BD3B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */; };
+		418BBC71192FF8C70033BD3B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */; };
+		418BBC72192FF8C70033BD3B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */; };
 		419ADD2719115E0700CD1443 /* FacebookHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2619115E0700CD1443 /* FacebookHandler.m */; };
 		419ADD30191160E700CD1443 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2E191160E700CD1443 /* LoginViewController.m */; };
 		419ADD31191160E700CD1443 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419ADD2F191160E700CD1443 /* LoginViewController.xib */; };
@@ -227,6 +230,9 @@
 		413E041619138FD40059CE09 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		413E04181913A1B30059CE09 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		413E04191913A1B30059CE09 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Resources/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Resources/Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Resources/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		419ADD2519115E0700CD1443 /* FacebookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHandler.h; sourceTree = "<group>"; };
 		419ADD2619115E0700CD1443 /* FacebookHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHandler.m; sourceTree = "<group>"; };
 		419ADD2D191160E700CD1443 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 		413C3A29190DCC76005A9D51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				418BBC64192FF7A30033BD3B /* Fonts */,
 				413C3A2A190DCC76005A9D51 /* DoStuff-Info.plist */,
 				413C3A2B190DCC76005A9D51 /* InfoPlist.strings */,
 				413C3A2E190DCC76005A9D51 /* main.m */,
@@ -590,6 +597,16 @@
 				413E041219138D6B0059CE09 /* FriendListCell.xib */,
 			);
 			name = "Friends List";
+			sourceTree = "<group>";
+		};
+		418BBC64192FF7A30033BD3B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */,
+				418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */,
+				418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		419ADD2419115DD900CD1443 /* Partners */ = {
@@ -766,7 +783,10 @@
 				4104465B191EE9AB00634088 /* DatePickerView.xib in Resources */,
 				413C3A2D190DCC76005A9D51 /* InfoPlist.strings in Resources */,
 				410FFF9F191AB57B00BDCD5F /* HeroCell.xib in Resources */,
+				418BBC70192FF8C70033BD3B /* Roboto-Bold.ttf in Resources */,
 				419ADD31191160E700CD1443 /* LoginViewController.xib in Resources */,
+				418BBC71192FF8C70033BD3B /* Roboto-Light.ttf in Resources */,
+				418BBC72192FF8C70033BD3B /* Roboto-Medium.ttf in Resources */,
 				419ADD3C191289B800CD1443 /* SignUpInformationView.xib in Resources */,
 				410FFF6E1919401C00BDCD5F /* CustomTabBarController.xib in Resources */,
 				41C3CDEC191ED2A2004FFED5 /* CreateActivityViewController.xib in Resources */,
