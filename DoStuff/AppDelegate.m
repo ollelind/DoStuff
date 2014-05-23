@@ -26,17 +26,25 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
-    
-    [self showTabBar];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
     
     [FBLoginView class];
 
     [[FacebookHandler client] checkIfFacebookIsAuthenticated];
+    [self customizeAppUI];
     
     return YES;
+}
+
+-(void)customizeAppUI{
+    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+    [titleBarAttributes setValue:[UIFont fontWithName:[NSString stringWithFormat:@"%@-Medium",fontName] size:18.0] forKey:NSFontAttributeName];
+    [titleBarAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+
+    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+
 }
 
 -(void)fbLoggedIn{
