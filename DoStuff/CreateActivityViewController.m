@@ -75,7 +75,7 @@
 }
 
 -(void)showFriendPickerView{
-    FriendsPicker *picker = [[FriendsPicker alloc]initWithFrame:CGRectMake(15, 0, 290, 200)];
+    FriendsPicker *picker = [[FriendsPicker alloc]initWithFrame:CGRectMake(0, 0, 320, 200)];
     [self presentStep:picker animated:YES];
 }
 

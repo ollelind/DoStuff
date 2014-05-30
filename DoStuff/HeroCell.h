@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet ProfilePictureImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet CustomLabel *nameLabel;
 @property (weak, nonatomic) IBOutlet CustomLabel *informationLabel;
+@property (weak, nonatomic) UITableView *tableView;
+
+-(void)select;
 
 -(void)setActivity:(Activity *)activity;
 

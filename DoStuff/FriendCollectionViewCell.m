@@ -25,7 +25,10 @@
 }
 
 -(void)setUser:(User *)user{
-    self.nameLabel.text = user.name;
+    NSArray *nameComponents = [user.name componentsSeparatedByString:@" "];
+    if(nameComponents.count > 0){
+        self.nameLabel.text = nameComponents[0];
+    }
     [self.profileImageView setImageURL:user.imageURL];
 }
 

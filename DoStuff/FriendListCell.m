@@ -47,6 +47,7 @@
 }
 
 
+
 +(double)defaultCellHeight{
     return 65;
 }

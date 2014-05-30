@@ -21,7 +21,6 @@
 
 -(void)awakeFromNib{
     NSString *textWight;
-    NSLog(@"%@", self.font.fontName);
     if([self.font.fontName rangeOfString:@"Regular"].location != NSNotFound){
         textWight = @"Light";
     }

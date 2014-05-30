@@ -76,6 +76,7 @@
 		418BBC70192FF8C70033BD3B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */; };
 		418BBC71192FF8C70033BD3B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */; };
 		418BBC72192FF8C70033BD3B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */; };
+		418BBC75192FFD720033BD3B /* FriendCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 418BBC74192FFD720033BD3B /* FriendCollectionViewFlowLayout.m */; };
 		419ADD2719115E0700CD1443 /* FacebookHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2619115E0700CD1443 /* FacebookHandler.m */; };
 		419ADD30191160E700CD1443 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419ADD2E191160E700CD1443 /* LoginViewController.m */; };
 		419ADD31191160E700CD1443 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419ADD2F191160E700CD1443 /* LoginViewController.xib */; };
@@ -233,6 +234,8 @@
 		418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Resources/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Resources/Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Resources/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		418BBC73192FFD720033BD3B /* FriendCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		418BBC74192FFD720033BD3B /* FriendCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		419ADD2519115E0700CD1443 /* FacebookHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHandler.h; sourceTree = "<group>"; };
 		419ADD2619115E0700CD1443 /* FacebookHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHandler.m; sourceTree = "<group>"; };
 		419ADD2D191160E700CD1443 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -652,6 +655,8 @@
 				4554C6DA1924E6C300AE5712 /* FriendCollectionViewCell.h */,
 				4554C6DB1924E6C300AE5712 /* FriendCollectionViewCell.m */,
 				4554C6DD1924E6DB00AE5712 /* FriendCollectionViewCell.xib */,
+				418BBC73192FFD720033BD3B /* FriendCollectionViewFlowLayout.h */,
+				418BBC74192FFD720033BD3B /* FriendCollectionViewFlowLayout.m */,
 			);
 			name = "Friend Picker";
 			sourceTree = "<group>";
@@ -830,6 +835,7 @@
 				413E040919138A840059CE09 /* UIImage+MultiFormat.m in Sources */,
 				410FFF721919421500BDCD5F /* CustomNavigationController.m in Sources */,
 				419ADD30191160E700CD1443 /* LoginViewController.m in Sources */,
+				418BBC75192FFD720033BD3B /* FriendCollectionViewFlowLayout.m in Sources */,
 				413E040219138A840059CE09 /* SDWebImageDecoder.m in Sources */,
 				413E03C9191373D90059CE09 /* BaseDAO.m in Sources */,
 				4104466019200B5500634088 /* CategoryPickerView.m in Sources */,

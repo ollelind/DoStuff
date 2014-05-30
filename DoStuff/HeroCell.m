@@ -9,7 +9,9 @@
 #import "HeroCell.h"
 #import "User.h"
 
-@implementation HeroCell
+@implementation HeroCell{
+    BOOL selected;
+}
 
 - (void)awakeFromNib
 {
@@ -21,7 +23,7 @@
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
-    self.container.layer.mask = maskLayer;
+    //self.container.layer.mask = maskLayer;
     
     self.container.layer.borderColor = COLOR_LIGHT_GREY.CGColor;
     self.container.layer.borderWidth = 1.0;
@@ -38,6 +40,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)select{
+    self.frame = CGRectMake(0, self.tableView.contentOffset.y + 50, 290, 500);
+    self.layer.zPosition = 999;
+    self.container.backgroundColor = COLOR_ORANGE;
+    [self.container setHeight:400];
+    self.container.layer.zPosition = 999;
 }
 
 +(double)defaultCellHeight{

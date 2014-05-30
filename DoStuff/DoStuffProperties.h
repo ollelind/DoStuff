@@ -21,5 +21,5 @@ static NSString *fontName = @"Roboto";
 #define COLOR_ORANGE [UIColor colorWithRed:255/255.0f green:210/255.0f blue:88/255.0f alpha:1.0f]
 #define COLOR_DARK_GREY [UIColor colorWithRed:60/255.0f green:60/255.0f blue:60/255.0f alpha:1.0f]
 #define COLOR_LIGHT_GREY [UIColor colorWithRed:230/255.0f green:230/255.0f blue:230/255.0f alpha:1.0f]
-#define COLOR_MAIN [UIColor colorWithRed:0/255.0f green:204/255.0f blue:255/255.0f alpha:1.0f]
+#define COLOR_MAIN [UIColor colorWithRed:176/255.0f green:212/255.0f blue:246/255.0f alpha:1.0f]
 #endif

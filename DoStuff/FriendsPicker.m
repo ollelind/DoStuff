@@ -10,6 +10,7 @@
 #import "FriendCollectionViewCell.h"
 #import "User.h"
 #import "UserDAO.h"
+#import "FriendCollectionViewFlowLayout.h"
 
 @implementation FriendsPicker{
 }
@@ -23,11 +24,9 @@
         self.friends = [NSMutableArray arrayWithArray:[dao listEntities]];
         
         
-        UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-        [aFlowLayout setItemSize:CGSizeMake(80,80)];
+        FriendCollectionViewFlowLayout *aFlowLayout = [[FriendCollectionViewFlowLayout alloc] init];
+        [aFlowLayout setItemSize:CGSizeMake(60,60)];
         [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-        aFlowLayout.minimumInteritemSpacing = 0;
-        aFlowLayout.minimumLineSpacing = 5;
         
         self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) collectionViewLayout:aFlowLayout];
         self.collectionView.delegate = self;

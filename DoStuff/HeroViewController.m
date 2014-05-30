@@ -37,8 +37,6 @@
     [super viewDidLoad];
     
     [self.navigationItem setTitle:@"Do Stuff?"];
-    
-    
 
     // Do any additional setup after loading the view from its nib.
     self.table = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
@@ -85,9 +83,11 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    DataFactory *factory = [[DataFactory alloc]init];
     if([[ActivityCategoryDAO buildDAO] countEntities] == 0){
-        DataFactory *factory = [[DataFactory alloc]init];
         [factory populateCategories];
+    }
+    if([[ActivityDAO buildDAO] countEntities] == 0){
         [factory populateActivities];
     }
     [self loadActivities];
@@ -114,15 +114,19 @@
     return [HeroCell defaultCellHeight];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    HeroCell *cell = [self.table dequeueReusableCellWithIdentifier:[HeroCell identifier]];
+    NSArray *temp = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([HeroCell class]) owner:self options:nil];
+    HeroCell *cell = temp[0];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     NSMutableArray *array = [self.sections objectForKey:[self.sectionIndexes objectAtIndex:indexPath.section]];
     Activity *activity = [array objectAtIndex:indexPath.row];
     [cell setActivity:activity];
+    cell.tableView = self.table;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    HeroCell *cell = (HeroCell *)[self.table cellForRowAtIndexPath:indexPath];
+    [cell select];
 }
 
 

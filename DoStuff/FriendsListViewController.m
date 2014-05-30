@@ -76,8 +76,7 @@
     
     NSArray *keys = [sections allKeys];
     sectionIndexes = [keys sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-    
-    [_table reloadData];
+    [self.table reloadData];
 }
 
 #pragma mark - UITableView
@@ -107,7 +106,8 @@
     return [FriendListCell defaultCellHeight];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FriendListCell *cell = [_table dequeueReusableCellWithIdentifier:[FriendListCell identifier] forIndexPath:indexPath];
+    NSArray *temp = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([FriendListCell class]) owner:self options:nil];
+    FriendListCell *cell = temp[0];
     NSMutableArray *array = [sections objectForKey:[sectionIndexes objectAtIndex:indexPath.section]];
     User *friend = [array objectAtIndex:indexPath.row];
     [cell buildFromUser:friend];
