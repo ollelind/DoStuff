@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "User.h"
 #import "UserDAO.h"
+#import "ParseClient.h"
 
 @implementation FacebookHandler{
     NSArray *permissions;
@@ -61,7 +62,7 @@ static FacebookHandler *_client = nil;
 
 -(void)login{
     // If the session state is any of the two "open" states when the button is clicked
-    if (FBSession.activeSession.state == FBSessionStateOpen
+    /*if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
         
         // Close the session and remove the access token from the cache
@@ -80,7 +81,8 @@ static FacebookHandler *_client = nil;
              // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
              [self sessionStateChanged:session state:state error:error];
          }];
-    }
+    }*/
+    [[ParseClient client] loginFacebookWithPermissions:permissions];
 }
 
 

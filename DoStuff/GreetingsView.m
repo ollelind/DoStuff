@@ -86,5 +86,6 @@
 
 - (IBAction)facebookButtonPressed:(id)sender {
     [[FacebookHandler client] login];
+    
 }
 @end

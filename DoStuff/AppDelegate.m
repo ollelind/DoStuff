@@ -12,11 +12,16 @@
 #import "FacebookHandler.h"
 #import "FriendsListViewController.h"
 #import "DataManager.h"
+#import "ParseClient.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Init Parse
+    [ParseClient client];
+    [[ParseClient client] trackAppStartWithLaunchOptions:launchOptions];
     
     // Init clients
     [DataManager client];
@@ -26,13 +31,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
     
-    [FBLoginView class];
+    
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupFinished) name:SETUP_FINISHED object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn) name:FB_LOGGED_IN object:nil];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
+    
+    //[FBLoginView class];
 
-    [[FacebookHandler client] checkIfFacebookIsAuthenticated];
+    //[[FacebookHandler client] checkIfFacebookIsAuthenticated];
+    [self showSetup];
     [self customizeAppUI];
     
     return YES;
@@ -69,8 +77,10 @@
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication withSession:[PFFacebookUtils session]];
+    
     // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    /*BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     
     [FBSession.activeSession setStateChangeHandler:
      ^(FBSession *session, FBSessionState state, NSError *error) {
@@ -80,7 +90,13 @@
     
     // You can add your app-specific url handling code here if needed
     
-    return wasHandled;
+    return wasHandled;*/
+}
+
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -98,15 +114,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    // Handle the user leaving the app while the Facebook login dialog is being shown
-    // For example: when the user presses the iOS "home" button while the login dialog is active
-    [FBAppCall handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
