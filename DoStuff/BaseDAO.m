@@ -8,18 +8,13 @@
 
 #import "BaseDAO.h"
 #import "DataManager.h"
+#import "BaseModel.h"
+#import "ParseClient.h"
 
 
 @implementation BaseDAO
 
 +(id) buildDAO{
-    /*NSString *className = NSStringFromClass([self class]);
-    id dao = [[ShapeUpStoreManager sharedStoreManager].objectDAOs objectForKey:className];
-    if (dao) {
-        return dao;
-    }
-    
-    [[ShapeUpStoreManager sharedStoreManager].objectDAOs setObject:newDAO forKey:className];*/
     id newDAO = [[self alloc] init];
     return newDAO;
 }
@@ -30,6 +25,10 @@
 
 -(void)save{
     [[DataManager client]saveContext];
+}
+-(void)saveAndPush:(BaseModel *)object{
+    [self save];
+    [[ParseClient client] saveObject:object];
 }
 
 //generic method to list all the entities in the table

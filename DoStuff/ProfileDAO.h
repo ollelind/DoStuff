@@ -11,14 +11,14 @@
 
 @interface ProfileDAO : BaseDAO
 
--(Profile *)newProfileWithFirstname:(NSString *)firstname
-                           lastname:(NSString *)lastname
-                              email:(NSString *)email
-                          birthdate:(NSString *)birthdate
-                           hometown:(NSString *)hometown
-                             gender:(BOOL)gender
-                           imageURL:(NSString *)imageURL
-                      facebookToken:(NSString *)facebookToken
-                     verifiedFbUser:(BOOL)verifiedFbUser;
+-(Profile *)newProfileWithIdentifier:(NSString *)identifier
+                           firstname:(NSString *)firstname
+                            lastname:(NSString *)lastname
+                               email:(NSString *)email
+                           birthdate:(NSString *)birthdate
+                            hometown:(NSString *)hometown
+                              gender:(BOOL)gender
+                       facebookToken:(NSString *)facebookToken
+                      verifiedFbUser:(BOOL)verifiedFbUser;
 
 @end

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
 
 @protocol GreetingsViewDelegate <NSObject>
 -(void)showNextView;
 @end
 
-@interface GreetingsView : UIView <FBLoginViewDelegate>
+@interface GreetingsView : UIView
 @property (nonatomic, weak) id<GreetingsViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 

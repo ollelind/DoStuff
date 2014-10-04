@@ -83,9 +83,9 @@
 		4158BC291939164C00B1A82A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC281939164C00B1A82A /* QuartzCore.framework */; };
 		4158BC2B1939165500B1A82A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC2A1939165500B1A82A /* StoreKit.framework */; };
 		4158BC2D1939165C00B1A82A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC2C1939165C00B1A82A /* SystemConfiguration.framework */; };
-		4158BC2F193916EF00B1A82A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC2E193916EF00B1A82A /* FacebookSDK.framework */; };
 		4158BC31193917C700B1A82A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC30193917C700B1A82A /* Social.framework */; };
 		4158BC34193918AF00B1A82A /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4158BC33193918AF00B1A82A /* ParseClient.m */; };
+		4158BC3A1939478500B1A82A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4158BC391939478500B1A82A /* FacebookSDK.framework */; };
 		418BBC70192FF8C70033BD3B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */; };
 		418BBC71192FF8C70033BD3B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */; };
 		418BBC72192FF8C70033BD3B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */; };
@@ -253,10 +253,10 @@
 		4158BC281939164C00B1A82A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4158BC2A1939165500B1A82A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		4158BC2C1939165C00B1A82A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4158BC2E193916EF00B1A82A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		4158BC30193917C700B1A82A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4158BC32193918AF00B1A82A /* ParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseClient.h; sourceTree = "<group>"; };
 		4158BC33193918AF00B1A82A /* ParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseClient.m; sourceTree = "<group>"; };
+		4158BC391939478500B1A82A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		418BBC6D192FF8C70033BD3B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Resources/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		418BBC6E192FF8C70033BD3B /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Resources/Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		418BBC6F192FF8C70033BD3B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Resources/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -332,9 +332,9 @@
 				4158BC1D1939161000B1A82A /* AudioToolbox.framework in Frameworks */,
 				413C3A27190DCC76005A9D51 /* CoreData.framework in Frameworks */,
 				413C3A25190DCC76005A9D51 /* UIKit.framework in Frameworks */,
+				4158BC3A1939478500B1A82A /* FacebookSDK.framework in Frameworks */,
 				413C3A21190DCC76005A9D51 /* Foundation.framework in Frameworks */,
 				4158BC1B193915EE00B1A82A /* Parse.framework in Frameworks */,
-				4158BC2F193916EF00B1A82A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,8 +433,8 @@
 		413C3A1F190DCC76005A9D51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4158BC391939478500B1A82A /* FacebookSDK.framework */,
 				4158BC30193917C700B1A82A /* Social.framework */,
-				4158BC2E193916EF00B1A82A /* FacebookSDK.framework */,
 				4158BC2C1939165C00B1A82A /* SystemConfiguration.framework */,
 				4158BC2A1939165500B1A82A /* StoreKit.framework */,
 				4158BC281939164C00B1A82A /* QuartzCore.framework */,
@@ -1059,8 +1059,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Olle Lind (7CFUN5K227)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/olle/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoStuff/DoStuff-Prefix.pch";
@@ -1079,8 +1079,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/olle/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DoStuff/DoStuff-Prefix.pch";

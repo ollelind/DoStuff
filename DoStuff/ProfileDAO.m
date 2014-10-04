@@ -10,30 +10,30 @@
 
 @implementation ProfileDAO
 
--(Profile *)newProfileWithFirstname:(NSString *)firstname
-                           lastname:(NSString *)lastname
-                              email:(NSString *)email
-                          birthdate:(NSString *)birthdate
-                           hometown:(NSString *)hometown
-                             gender:(BOOL)gender
-                           imageURL:(NSString *)imageURL
-                      facebookToken:(NSString *)facebookToken
-                     verifiedFbUser:(BOOL)verifiedFbUser
+-(Profile *)newProfileWithIdentifier:(NSString *)identifier
+                           firstname:(NSString *)firstname
+                            lastname:(NSString *)lastname
+                               email:(NSString *)email
+                           birthdate:(NSString *)birthdate
+                            hometown:(NSString *)hometown
+                              gender:(BOOL)gender
+                       facebookToken:(NSString *)facebookToken
+                      verifiedFbUser:(BOOL)verifiedFbUser
 {
     Profile *item = (Profile *)[self latestObject];
     if(item == nil){
          item = (Profile *)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Profile class]) inManagedObjectContext:self.managedObjectContext];
     }
+    item.identifier = identifier;
     item.firstname = firstname;
     item.lastname = lastname;
     item.email = email;
     item.birthdate = birthdate;
     item.hometown = hometown;
     item.gender = gender;
-    item.imageURL = imageURL;
     item.facebookToken = facebookToken;
     item.verifiedFacebookUser = verifiedFbUser;
-    [self save];
+    [self saveAndPush:item];
     return item;
 }
 

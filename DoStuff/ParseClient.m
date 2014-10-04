@@ -8,6 +8,8 @@
 
 #import "ParseClient.h"
 #import <Parse/Parse.h>
+#import "FacebookHandler.h"
+#import "Profile.h"
 
 @implementation ParseClient
 
@@ -37,22 +39,47 @@ static NSString *parseClientKey = @"ejGwbdvrTSvNyPCMSnxEMOlmPQMoFm7QnTkzKYzX";
     return _client;
 }
 
-
+-(void)saveObject:(BaseModel *)model{
+    NSDictionary *attributes =  [model properties];
+    PFObject *parseObject;
+    if([model isKindOfClass:[Profile class]]){
+        parseObject = [PFUser currentUser];
+    }
+    
+    for(NSString *key in attributes.allKeys){
+        id value = [attributes objectForKey:key];
+        if(value){
+            [parseObject setObject:value forKey:key];
+        }
+    }
+    [parseObject saveInBackground];
+    
+}
 
 #pragma mark - Social
 -(void)loginFacebookWithPermissions:(NSArray *)permissions{
     [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
-        NSLog(@"Err: %@", error);
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-        } else {
-            NSLog(@"User logged in through Facebook!");
+        if (!user || error) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:FB_ERROR object:error userInfo:nil];
+            NSLog(@"Err: %@", error);
+        }
+        else {
+           
+            [[FBSession activeSession] refreshPermissionsWithCompletionHandler:^(FBSession *session, NSError *error) {
+                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                    if (!error) {
+                        // Store the current user's Facebook ID on the user
+                        [[NSNotificationCenter defaultCenter] postNotificationName:FB_LOGGED_IN object:result userInfo:nil];
+                        NSLog(@"FB_PERM: %@", [FBSession activeSession].declinedPermissions);
+                    }
+                }];
+            }];
+            // The login was successfull, now fetch the users data.
+            
         }
     }];
-
 }
+
 
 
 @end

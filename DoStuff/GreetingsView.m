@@ -18,7 +18,6 @@
 
 -(void)awakeFromNib{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedIn:) name:FB_LOGGED_IN object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbLoggedOut) name:FB_LOGGED_OUT object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbError:) name:FB_ERROR object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fbFriendsFetched:) name:FB_FRIENDS_FETCHED object:nil];
     
@@ -29,10 +28,10 @@
 }
 
 -(void)fbLoggedIn:(NSNotification *)notification{
-    [self.facebookButton setTitle:@"Fetching data..." forState:UIControlStateNormal];
-    NSDictionary<FBGraphUser> *user = [notification object];
-
     
+    // Parse the data
+    NSDictionary<FBGraphUser> *user = [notification object];
+    NSString *facebookID = [user objectID];
     NSString *birthday = [user birthday];
     NSString *firstname = [user first_name];
     NSString *lastname = [user last_name];
@@ -51,7 +50,15 @@
     NSString *facebookToken = accessTokenData.accessToken;
     
     ProfileDAO *profileDao = [ProfileDAO buildDAO];
-    [profileDao newProfileWithFirstname:firstname lastname:lastname email:email birthdate:birthday hometown:hometown gender:gender imageURL:nil facebookToken:facebookToken verifiedFbUser:verifiedFacebookUser];
+    [profileDao newProfileWithIdentifier:facebookID
+                               firstname:firstname
+                                lastname:lastname
+                                   email:email
+                               birthdate:birthday
+                                hometown:hometown
+                                  gender:gender
+                           facebookToken:facebookToken
+                          verifiedFbUser:verifiedFacebookUser];
     
     [[FacebookHandler client] fetchFriends];
     [self updateFacebookButton];
@@ -62,8 +69,8 @@
 }
 
 -(void)fbError:(NSNotification *)notification{
-    NSString *errorString = [notification object];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:errorString delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+    NSError *errorString = [notification object];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Ops!" message:errorString.description delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -85,6 +92,7 @@
 
 
 - (IBAction)facebookButtonPressed:(id)sender {
+    [self.facebookButton setTitle:@"Fetching data..." forState:UIControlStateNormal];
     [[FacebookHandler client] login];
     
 }

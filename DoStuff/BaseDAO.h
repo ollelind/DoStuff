@@ -22,6 +22,7 @@
 -(NSUInteger) countEntities;
 -(BaseModel *) latestObject;
 -(BaseModel *) oldestObject;
+-(void)saveAndPush:(BaseModel *)object;
 
 -(void)save;
 

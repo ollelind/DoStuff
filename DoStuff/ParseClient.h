@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
 @interface ParseClient : NSObject
 
 +(ParseClient *)client;
 
 -(void)trackAppStartWithLaunchOptions:(NSDictionary *)launchOptions;
+
+-(void)saveObject:(BaseModel *)model;
 
 
 #pragma mark - Social

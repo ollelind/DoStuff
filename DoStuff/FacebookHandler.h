@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FacebookSDK/FacebookSDK.h>
 
 #define FB_LOGGED_IN @"FB_LOGGED_IN"
 #define FB_LOGGED_OUT @"FB_LOGGED_OUT"
@@ -24,6 +23,6 @@
 -(void)askForFacebookPermissions;
 -(void)fetchFriends;
 
--(void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
+//-(void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 
 @end

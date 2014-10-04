@@ -7,7 +7,6 @@
 //
 
 #import "FacebookHandler.h"
-#import <FacebookSDK/FacebookSDK.h>
 #import "User.h"
 #import "UserDAO.h"
 #import "ParseClient.h"
@@ -21,8 +20,7 @@ static FacebookHandler *_client = nil;
 
 -(id)init{
     if (self = [super init]) {
-        permissions = @[@"public_profile", @"email", @"user_friends",@"user_birthday",@"friends_hometown",
-                        @"friends_birthday",@"friends_location"];
+        permissions = @[@"public_profile", @"email", @"user_friends"];
         //permissions = @[@"public_profile"];
     }
     
@@ -40,54 +38,27 @@ static FacebookHandler *_client = nil;
 
 #pragma mark - API
 -(BOOL)isAuthenticated{
-    return (FBSession.activeSession.state == FBSessionStateOpen || FBSession.activeSession.state == FBSessionStateOpenTokenExtended);
+    return NO;
 }
 -(void)checkIfFacebookIsAuthenticated{
-    // Whenever a person opens the app, check for a cached session
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        
-        // If there's one, just open the session silently, without showing the user the login UI
-        [FBSession openActiveSessionWithPermissions:permissions
-                                           allowLoginUI:NO
-                                      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                          // Handler for session state changes
-                                          // This method will be called EACH time the session state changes,
-                                          // also for intermediate states and NOT just when the session open
-                                          [self sessionStateChanged:session state:state error:error];
-                                      }];
-    }else{
-        [[NSNotificationCenter defaultCenter] postNotificationName:FB_LOGGED_OUT object:nil];
-    }
 }
 
 -(void)login{
-    // If the session state is any of the two "open" states when the button is clicked
-    /*if (FBSession.activeSession.state == FBSessionStateOpen
-        || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
-        
-        // Close the session and remove the access token from the cache
-        // The session state handler (in the app delegate) will be called automatically
-        [FBSession.activeSession closeAndClearTokenInformation];
-        
-        // If the session state is not any of the two "open" states when the button is clicked
-    } else {
-        // Open a session showing the user the login UI
-        // You must ALWAYS ask for public_profile permissions when opening a session
-        [FBSession openActiveSessionWithPermissions:permissions
-                                           allowLoginUI:YES
-                                      completionHandler:
-         ^(FBSession *session, FBSessionState state, NSError *error) {
-             
-             // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
-             [self sessionStateChanged:session state:state error:error];
-         }];
-    }*/
     [[ParseClient client] loginFacebookWithPermissions:permissions];
 }
 
 
 -(void)fetchFriends{
-    FBRequest *friendRequest = [FBRequest requestForGraphPath:@"me/friends?fields=name,picture,birthday,location"];
+    /*[[FBSession activeSession] requestNewReadPermissions:@[@"user_friends"] completionHandler:^(FBSession *session, NSError *error) {
+        NSArray *current = [FBSession activeSession].permissions;
+        NSLog(@"Perm: %@", current);
+    }];*/
+    
+    NSArray *perm = [FBSession activeSession].permissions;
+    NSLog(@"current perm: %@", perm);
+    
+    
+    FBRequest *friendRequest = [FBRequest requestForGraphPath:@"me/taggable_friends"];
     [ friendRequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         NSArray *data = [result objectForKey:@"data"];
         NSMutableArray *friends = [NSMutableArray array];
@@ -102,17 +73,38 @@ static FacebookHandler *_client = nil;
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:FB_FRIENDS_FETCHED object:friends];
     }];
+    
+    /*[FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // result wifall contain an array with your user's friends in the "data" key
+            NSArray *friendObjects = [result objectForKey:@"data"];
+            NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:friendObjects.count];
+            // Create a list of friends' Facebook IDs
+            for (NSDictionary *friendObject in friendObjects) {
+                [friendIds addObject:[friendObject objectForKey:@"id"]];
+            }
+            
+            // Construct a PFUser query that will find friends whose facebook ids
+            // are contained in the current user's friend list.
+            PFQuery *friendQuery = [PFUser query];
+            [friendQuery whereKey:@"fbId" containedIn:friendIds];
+            
+            // findObjects will return a list of PFUsers that are friends
+            // with the current user
+            NSArray *friendUsers = [friendQuery findObjects];
+        }
+    }];*/
 }
 
 -(void)askForFacebookPermissions{
-    [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+    /*[FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
         NSLog(@"permissions::%@",FBSession.activeSession.permissions);
-    }];
+    }];*/
 }
 
 #pragma mark - Facebook helpers and delegate
 // This method will handle ALL the session state changes in the app
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+/*- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
 {
     // If the session was opened successfully
     if (!error && state == FBSessionStateOpen){
@@ -165,7 +157,7 @@ static FacebookHandler *_client = nil;
         // Clear this token
         [FBSession.activeSession closeAndClearTokenInformation];
     }
-}
+}*/
 
 
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface BaseModel : NSManagedObject
+
+@property (nonatomic, strong) PFObject *parseObject;
+
+- (NSDictionary *)properties;
 
 @end

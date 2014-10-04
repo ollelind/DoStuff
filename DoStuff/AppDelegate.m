@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "SetupViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
 #import "FacebookHandler.h"
 #import "FriendsListViewController.h"
 #import "DataManager.h"

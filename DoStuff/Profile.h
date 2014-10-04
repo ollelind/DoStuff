@@ -20,6 +20,6 @@
 @property (nonatomic) BOOL gender;
 @property (nonatomic) BOOL verifiedFacebookUser;
 @property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic) int64_t identifier;
+@property (nonatomic, retain) NSString * identifier;
 
 @end

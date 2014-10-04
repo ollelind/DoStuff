@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
 
 @interface LoginViewController ()
 
@@ -20,11 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions: @[@"basic_info", @"email", @"user_friends"]];
-    loginView.delegate = self;
-    [loginView setOriginX:screenSize.width/2 -loginView.frame.size.width/2];
-    [loginView setOriginY:100];
-    [self.view addSubview:loginView];
 }
 
 
